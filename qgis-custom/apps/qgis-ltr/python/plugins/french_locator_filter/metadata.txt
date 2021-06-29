@@ -1,0 +1,37 @@
+[general]
+name=French Locator Filter
+about=The French geo.api is an open Geocoder service provided by French Government.
+    A Locator Filter implements the fetching of data from internal or external sources.
+    This plugin is forked from the work of Richard Duivenvoorde. Kudos Richard
+    Read more: <a href="http://www.qgis.nl/2018/05/16/english-coding-a-qgslocator-plugin/?lang=en">http://www.qgis.nl/2018/05/16/english-coding-a-qgslocator-plugin</a>
+about[fr]=L'API du gouvernement français est un service de geocodage gratuit et ouvert base sur la base adresse nationale. Ce plugin ajoute un filtre de recherche sur ce service dans la barre de recherche universelle.
+
+category=Filter
+
+description=This is a plugin which adds a Locator Filter (Geocoder) based on the french API <a href="https://geo.api.gouv.fr/adresse">geo.api.gouv.fr/adresse</a> to QGIS
+description[fr]=Extension activant la recherche d'adresse dans la barre de recherche universelle, basee sur l'API <a href="https://geo.api.gouv.fr/adresse">geo.api.gouv.fr/adresse</a>
+    Financement par les services de la gendarmerie Nationale.
+    Ce plugin est basé sur le travail de Richard Duivenvoorde (merci Richard !).
+    En savoir plus sur ce plugin <a href="http://www.qgis.nl/2018/05/16/english-coding-a-qgslocator-plugin/?lang=en">http://www.qgis.nl/2018/05/16/english-coding-a-qgslocator-plugin</a>
+
+icon=resources/images/icon.svg
+
+tags=geocoder, locator, filter, addok, France, french
+tags[fr]=geocodeur, recherche, adresse, France, ADDOK, Etalab, BAN, BANO
+
+# credits and contact
+author=Régis Haubourg (Oslandia), Richard Duivenvoorde, Zuidt, Julien Moura (Oslandia)
+email=qgis@oslandia.com
+homepage=https://oslandia.gitlab.io/qgis/french_locator_filter/
+repository=https://gitlab.com/Oslandia/qgis/french_locator_filter/
+tracker=https://gitlab.com/Oslandia/qgis/french_locator_filter/-/issues
+
+# status
+deprecated=False
+experimental=True
+qgisMinimumVersion=3.16
+qgisMaximumVersion=3.99
+
+# versioning
+version=1.0.0-beta1
+changelog=

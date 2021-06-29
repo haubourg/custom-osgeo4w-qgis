@@ -1,0 +1,20 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<title>Astuces</title>
+</head>
+<body>
+<h2>Comment éliminer les élements de légende en dehors du masque ?</h2>
+<p>On peut vouloir utiliser le masque pour mettre en évidence une zone d'une carte. Auquel cas, on peut vouloir cacher 
+les éléments de légende qui ne sont pas affichés à l'intérieur du polygon de masque.</p>
+<p>La fonction <tt>in_mask</tt> peut être utilisée dans ce but. À partir de QGIS 2.14, une nouvelle option
+  a été ajoutée aux outils de filtre de légende, permettant de spécifier une expression. Un symbole fera partie de
+  la légende seulement si au moins une de ses entités fait que l'expression booléenne est évaluée à vrai.</p>
+<p>Ceci peut en particulier être utilisé pour éliminer de la légende les entités qui ne sont pas dans le masque en utilisant
+  la fonction <tt>in_mask(SRID)</tt>. Le premier argument doit être le code EPSG du système de coordonnées de l'entité sur laquelle l'expression est évaluée.
+  Par exemple <tt>in_mask(2154)</tt> pour du Lambert 93.</p>
+  <p>Utilisez in_mask(0) si l'ensemble de vos données (masque et étiquettes) sont codées dans une même projection.</p>
+<br/>
+<center><img src="legend_inmask.png"/></center>
+</body>
+</html>

@@ -1,0 +1,7 @@
+sdesc: "QGIS LTR configuration package"
+ldesc: "QGIS LTR custom configuration package"
+maintainer: RHaubourg
+category: Desktop
+requires: qgis-ltr
+version: 0.9-2
+install: x86_64/release/qgis/qgis-custom/qgis-custom-0.9-2.tar.bz2

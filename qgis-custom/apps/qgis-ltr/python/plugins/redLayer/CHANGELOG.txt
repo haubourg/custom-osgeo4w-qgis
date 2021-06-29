@@ -1,0 +1,47 @@
+R1.0
+First QGIS2 release
+
+R1.1 
+Toolbar disabled when project is not saved. issue fixed
+
+R1.2 
+throws error opening new project issue fixed
+
+R1.3
+Line tool added
+
+R1.3.1
+self.gestures exception fixed
+
+R1.4
+Open and save sketches to file feature
+
+R1.4.1
+load issue fixed
+
+R1.4.2 
+erase existing annotations on load issue fix and save project as issues fixed
+
+R1.4.3 
+erase all action does not erase annotations issue fixed
+
+R2.0.0
+QGIS3 migration
+
+R2.0.1 
+ModuleNotFoundError issue fixed
+
+R2.0.2
+French Translations added (courtesy of @SebastienPeillet)
+
+R2.0.3
+Fix for .sketch file issue (courtesy of Regis Hauburg @haubourg)
+
+R2.0.4 
+Fix for QgsAnnotation API break (courtesy of @Fighterisr) 
+
+R2.1.0 
+Code and Pep8 cleanup, exceptions logging and external sketch file handling issues fixed ( courtesy of @Guts for Oslandia )
+
+R2.2.0
+Save issue fix and CRS Trasformation support

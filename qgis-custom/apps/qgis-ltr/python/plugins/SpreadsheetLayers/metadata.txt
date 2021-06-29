@@ -1,0 +1,42 @@
+# This file contains metadata for your plugin. Since 
+# version 2.0 of QGIS this is the proper way to supply 
+# information about a plugin. The old method of 
+# embedding metadata in __init__.py will 
+# is no longer supported since version 2.0.
+
+# This file should be included when you package your plugin.
+
+# Mandatory items:
+
+[general]
+name=Spreadsheet Layers
+qgisMinimumVersion=3.0
+description=Load layers from spreadsheet files (*.ods, *.xls, *.xlsx)
+about=This plugin adds a "Add spreadsheet layer" entry in "Layer" / "Add new Layer" menu and a corresponding button in the "Layers" toolbar.
+    These two links open the same dialog to load a layer from a spreadsheet file (*.ods, *.xls, *.xlsx) with some options (use header at first line, ignore some rows and optionally load geometry from x and y fields).
+    When this dialog is accepted, it creates a new GDAL VRT file in same folder as the source data file and layer name, expanded with a .vrt suffix which is loaded into QGIS using OGR VRT driver.
+    When reusing the same file twice, the dialog loads its values from the existing .vrt file.
+    No need to install additional dependencies.
+version=2.0.1
+author=Camptocamp
+email=info@camptocamp.com
+
+# End of mandatory metadata
+
+# Optional items:
+
+# Uncomment the following line and add your changelog:
+# changelog=
+
+# Tags are comma separated with spaces allowed
+tags=spreadsheet,ods,xls,xlsx,calc,excel
+
+homepage=https://github.com/camptocamp/QGIS-SpreadSheetLayers
+tracker=https://github.com/camptocamp/QGIS-SpreadSheetLayers/issues
+repository=https://github.com/camptocamp/QGIS-SpreadSheetLayers
+icon=resources/icon/mActionAddSpreadsheetLayer.svg
+# experimental flag
+experimental=False
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False

@@ -1,0 +1,60 @@
+propertiesToRemove:
+    qgis:
+    - defaultProjectFileFormat
+    proxy:
+    - authcfg
+    - proxyEnabled
+    - proxyExcludeUrls
+    - proxyHost
+    - proxyPassword
+    - proxyPort
+    - proxyType
+    - proxyUser
+    - noProxyUrls
+    PostgreSQL: 
+    - connections/selected
+    - connections/bd_prod/service
+    - connections/bd_prod/host
+    - connections/bd_prod/port
+    - connections/bd_prod/database
+    - connections/bd_prod/username
+    - connections/bd_prod/password
+    - connections/bd_prod/sslmode
+    - connections/bd_prod/saveUsername
+    - connections/bd_prod/savePassword
+    - connections/bd_prod/publicOnly
+    - connections/bd_prod/dontResolveType
+    - connections/bd_prod/geometryColumnsOnly
+    - connections/bd_test/service
+    - connections/bd_test/host
+    - connections/bd_test/port
+    - connections/bd_test/database
+    - connections/bd_test/username
+    - connections/bd_test/password
+    - connections/bd_test/sslmode
+    - connections/bd_test/saveUsername
+    - connections/bd_test/savePassword
+    - connections/bd_test/publicOnly
+    - connections/bd_test/dontResolveType
+    - connections/bd_test/geometryColumnsOnly
+    PythonPlugins:
+    - GdalTools
+    - db_manager
+    - processing
+    - geometrycheckerplugin
+    - SpreadsheetLayers
+    - menu_from_project
+    - redLayer
+    - coordinator
+    - french_locator_filter
+    - mask
+    - qNote
+    menu_from_project:
+    - is_setup_visible
+    - optionTooltip
+    - optionCreateGroup
+    - optionLoadAll
+    - projects/size
+    - projects/1/file
+    - projects/1/name
+    - projects/1/location

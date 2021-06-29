@@ -1,0 +1,139 @@
+
+<p><img src="images/screen_basics.png" alt="Basic functionality" /></p>
+
+<p>Coordinators basic function is to just transform input coordinates into output
+coordinates through a &mdash; you guessed it &mdash; coordinate transformation. The coordinator panel is structured
+in two sections: The upper section represents the input, the lower the output of the
+current coordinate transformation.</p>
+
+<h4 id="transformation">Transformation</h4>
+
+<p>The Input Coordinate Reference System (CRS) can be selected arbitrarily while
+the Output CRS is connected with the currently active layer by default. If the user
+selects another layer, the Output CRS changes accordingly. This behavior can be changed by toggling
+the lock button in the lower section &mdash; if unlocked the output CRS can also be selected
+independently from the active layer.</p>
+
+<h4 id="input">Input</h4>
+
+<p>There are two ways to enter new coordinates into the transformation:
+1. by entering manually into the panel or
+2. by capturing the coordinates with the picker from the map</p>
+
+<p>Any input is transformed instantly.</p>
+
+<p>Besides decimal coordinates both the input and the output support geographic coordinates
+also in Degree/Minute/Seconds units (DMS) by selecting the appropriate option for the corresponding
+section. If in DMS mode, buttons to switch the coordinate&#8217;s hemisphere (North/South or East/West) become
+active.</p>
+
+<p>All the input can be cleared by pressing the corresponding button.</p>
+
+<h4 id="map-visualization">Map Visualization</h4>
+
+<p><img src="images/screen_maptools.png" alt="Maptools" /></p>
+
+<p>The currently entered coordinate is marked on the main canvas with a circle. The marker can
+be hidden by toggling the corresponding button. If the coordinate is currently not within
+the current main canvas extent, a warning is shown.</p>
+
+<p>By clicking the &#8220;Pan Map&#8221; button, the map is centered on the current coordinate. The
+map&#8217;s scale is not changed.</p>
+
+<h4 id="coordinate-capture">Coordinate Capture</h4>
+
+<p><img src="images/screen_capture.png" alt="Maptools" /></p>
+
+<p>The input coordinate can be captured from the map canvas with the picker tool activated with the corresponding
+button. The input CRS does <em>not</em> have to be in the CRS of the map or currently active
+layer.</p>
+
+<h4 id="copy-result-to-clipboard">Copy Result to Clipboard</h4>
+
+<p><img src="images/screen_copy.png" alt="Copy Tools" /></p>
+
+<p>The output of the transformation displayed in the lower section can be copied to the
+clipboard as a whole with the button to the right. In this case both coordinate components
+are separated by a tab for easy pasting into spreadsheet applications.</p>
+
+<p>With the smaller copy buttons above the output coordinates components, only the respective
+value is copied to clipboard.</p>
+
+<h4 id="digitizing">Digitizing</h4>
+
+<p><img src="images/screen_digitize.png" alt="Digitizing" /></p>
+
+<p>Coordinator provides ways to create features based on the currently entered coordinates. The
+corresponding button in the lower section is enabled when the user has a vector opened
+for editing <strong>and</strong> is currently adding a feature <strong>and</strong> valid coordinates are entered
+as input.</p>
+
+<ul>
+<li>For a layer with <strong>Point Geometry</strong> this means the &#8220;Add Point Feature"-Tool is enabled.
+Now, if the user clicks the &#8220;Add Coordinates"-Button, a new point feature is added
+to the layer. If attributes are to be entered for this new feature, the corresponding
+dialog is opened.</li>
+<li>For layers with <strong>Line or Polygon Geometry</strong>, the &#8220;Add Line/Polygon Feature&#8221;
+needs to be enabled. &#8220;Add Coordinates&#8221; adds the current coordinates to the
+current line or polygon rubberband or starts a new feature with the current coordinates
+as starting point. To actually create the new feature the user still has to finalize
+it &mdash; for example by right-clicking into the map.</li>
+</ul>
+
+<p>Note that neither CRS of the transformation needs to be in the layer&#8217;s CRS.</p>
+
+<p><img src="images/capture.gif" alt="demo capture with Polygon layer" /></p>
+
+<h2 id="advanced-usage">Advanced Usage</h2>
+
+<h3 id="stepwise-input-change">Stepwise Input change</h3>
+
+<p>All input fields support stepwise change by using the directional keys on the keyboard
+or the mouse wheel. For example you can increment an input field by one by pressing
+the &#8220;up"-arrow or by scrolling up while that field is active.</p>
+
+<h3 id="hemisphere-switching">Hemisphere switching</h3>
+
+<p>Pressing &#8216;-&#8217; (minus-key) in an input field switches the hemisphere of the coordinate
+if the current input CRS is a geographic one.</p>
+
+<h3 id="keyboard-digitize">Keyboard Digitize</h3>
+
+<p>Pressing Enter/Return in any input field performs a coordinate digitization if currently
+possible. It&#8217;s therefore possible to digitize a bunch of coordinates manually, for example
+when reading from unstructured coordinate lists.</p>
+
+<h2 id="tests">Tests</h2>
+
+<p>Tests can be run with the QGIS python console or in a terminal with the appropriate environment ( e.g. PYTHONPATH, QT plugin path, 
+QGIS<em>PREFIX</em>PATH &#8230;).</p>
+
+<ul>
+<li><p>to execute <strong>inside QGIS</strong>, open Plugins -> Python console&#8230; and enter
+~~~ 
+import coordinator.test
+coordinator.test.run_all()
+~~~</p></li>
+<li><p>to execute <strong>in a terminal</strong> make sure the  environment variables are set correctly:</p>
+
+<ul>
+<li><code>PATH</code> (should prefer the QGIS installation binaries, especially python)</li>
+<li><code>QGIS_PREFIX_PATH</code> (usually <code>&lt;QGIS installation path&gt;/apps/qgis</code>)</li>
+<li><code>QT_PLUGIN_PATH</code>: <code>QGIS_PREFIX_PATH</code> + <code>/../Qt5/plugins</code></li>
+<li><code>PYTHONPATH</code> (usually <code>QGIS_PREFIX_PATH</code> + <code>/python</code> and + <code>/../Qt5/python</code> and the 
+QGIS profile plugin folder )</li>
+</ul>
+
+<p><p>then execute
+~~~
+python -m coordinator.test
+~~~</p></li>
+</ul></p>
+
+<h2 id="help-links">Links</h2>
+<ul>
+<li><a href="https://plugins.qgis.org/plugins/coordinator/">Plugin homepage on plugins.qgis.org</a></li>
+<li><a href="https://github.com/iona5/coordinator">Github page</a></li>
+<li><a href="https://github.com/iona5/coordinator/issues">Bug Reports</a></li>
+</ul>
+<p style='font-size: 8pt; font-style: italic; text-align: right'>git commit: d14b207</p>

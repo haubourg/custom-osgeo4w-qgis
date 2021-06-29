@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/SpreadsheetLayers">
+        <file>icon/mActionAddSpreadsheetLayer.svg</file>
+    </qresource>
+</RCC>

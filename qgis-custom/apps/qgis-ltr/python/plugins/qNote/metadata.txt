@@ -1,0 +1,49 @@
+# This file contains metadata for your plugin. Beginning
+# with version 1.8 this is the preferred way to supply information about a
+# plugin. The current method of embedding metadata in __init__.py will
+# be supported until version 2.0
+
+# This file should be included when you package your plugin.
+
+# Mandatory items:
+
+
+[general]
+name=qNote
+qgisMinimumVersion=3.0
+qgisMaximumVersion=3.99
+description=Save notes in QGIS projects
+version=2.0
+about=qNote is plugin for saving text notes in QGIS project files
+
+# end of mandatory metadata
+
+# Optional items:
+
+# Uncomment the following line and add your changelog entries:
+changelog=2.0
+    - port to QGIS 3
+
+    1.0
+    - qNote is not marked as experimental from now
+    - set qgisMaximumVersion to allow downloading in QGIS 2.0
+
+    0.1
+    - first release
+
+# tags are comma separated with spaces allowed
+tags=
+
+homepage=http://www.gis-support.pl/qnote-notatki-w-qgis/
+tracker=https://github.com/p0cisk/qNote/issues
+repository=https://github.com/p0cisk/qNote
+icon=icon.png
+# experimental flag
+experimental=False
+
+# deprecated flag (applies to the whole plugin, not just a single version
+deprecated=False
+
+# Author contact information
+author=GIS Support, Piotr Pociask
+email=piotr.pociask@gis-support.pl

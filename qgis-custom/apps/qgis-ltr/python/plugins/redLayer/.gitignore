@@ -1,0 +1,12 @@
+*.pyc
+Makefile
+*.log
+help/
+# i18n/
+scripts/
+test/
+.idea/
+.DS_Store
+versions/
+.venv
+.vscode

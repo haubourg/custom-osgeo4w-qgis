@@ -1,0 +1,60 @@
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=Coordinator
+qgisMinimumVersion=3.4
+description=Capture, transform and use coordinates
+version=0.4
+author=Jonas Küpper
+email=qgis@geograffr.eu
+
+about=The purpose of this plugin is to make handling of coordinate IO easier and includes a transformation tool and supports creation of simple features.
+ This plugin overlaps in different ways with the purpose of the plugins Coordinate Capture, Lat Lon Tools and the Advanced Digitize Panel. It however aims to integrate in a clean and simple interface multiple tasks these tools are sometimes used together. And yes...: Its almost as it's just another coordinate tool. :)
+ The two main functions of this plugin are: 
+ (A) a simple and easy to use coordinate transformation tool with an integrated picker and 
+ (B) a quick to use coordinate digitizer with support for coordinates in an arbitrary CRS independent of project or layer CRS. 
+ Both of these functions are seamlessly integrated and are implemented as a single, unique operation.
+
+tracker=https://github.com/iona5/coordinator/issues
+repository=https://github.com/iona5/coordinator
+# End of mandatory metadata
+
+# Recommended items:
+
+# Uncomment the following line and add your changelog:
+changelog=0.4
+    - fix capture with wrong coordinate system with Point geometry
+    - ensure a valid CRS is selected when changing through QgsProjectionSelectionDialog (issue #5)
+  0.3.2
+    - metadata fix
+  0.3.1
+    - "add Feature"-button should be disabled when selecting non editing tool
+    - pull request 16: use default values when capturing points (thanks @AlexanderFinkbeiner)
+  0.3
+    - issue #2: make sure capture tool is deselected when user selects another tool
+    - issue #12: negative coordinates in geodetic systems were not properly processed
+    - digitize helper announced feature addition without actually knowing if it succeeded
+    - various translation issus (including issues #7, #8) 
+    - internal bugfixes regarding stability and test regime
+  0.2
+    - added french translation by SebastienPeillet
+    - fix issue #3: switching to edit mode in QGIS compiled with Qt < 5.11 failed
+    - fix issue #1: locked CRS does not change when CRS of selected layer changes
+    - enhanced test suite
+    - build improvements
+    - help improvements
+    - general cleanup
+  0.1 - Initial release
+
+# Tags are comma separated with spaces allowed
+tags=python,coordinate,coordinates,transformation,digitizing,clipboard,capture
+
+homepage=https://github.com/iona5/coordinator
+category=Plugins
+icon=icons/marker.svg
+# experimental flag
+experimental=True
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+

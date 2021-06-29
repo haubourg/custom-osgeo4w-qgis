@@ -1,0 +1,14 @@
+<RCC>
+  <qresource prefix="/plugins/coordinator">
+    <file>icons/help.svg</file>
+    <file>icons/warning.svg</file>
+    <file>icons/addToCanvas.svg</file>
+    <file>icons/capture.svg</file>
+    <file>icons/clear.svg</file>
+    <file>icons/copy.svg</file>
+    <file>icons/locked.svg</file>
+    <file>icons/marker.svg</file>
+    <file>icons/panMap.svg</file>
+    <file>icons/unlocked.svg</file>
+  </qresource>
+</RCC>

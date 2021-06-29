@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/plugins/qgislocator" >
+        <file>resources/images/icon.svg</file>
+    </qresource>
+</RCC>

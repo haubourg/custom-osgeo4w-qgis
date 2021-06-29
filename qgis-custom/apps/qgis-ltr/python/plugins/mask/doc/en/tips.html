@@ -1,0 +1,20 @@
+<html>
+<head>
+<title>Tips</title>
+</head>
+<body>
+<h2>How to filter out legend elements based on the mask ?</h2>
+<p>One may want to use the mask to highlight some part of a map. In which case, one may want to hide
+  elements of the legend (in a composition) that are not displayed inside the polygon of the mask.</p>
+<p>The <tt>in_mask</tt> function can be used for that purpose. Starting with QGIS 2.14, a new option
+  has been added to the legend filter tool, allowing to specify an expression. A symbol will be part of
+  the legend only if at least one of its features make the boolean expression evaluated to true.</p>
+<p>That can especially be used to filter out features that are not visible inside the mask by using
+  the function <tt>in_mask(SRID)</tt>. The first argument must be the EPSG code of the target CRS of the evaluated features.
+  For example <tt>in_mask(2154)</tt> for a French Lambert 93.</p>
+  <p>Use in_mask(0) if all layers (mask and labels) are in the same projection.</p>
+
+<br/>
+<center><img src="legend_inmask.png"/></center>
+</body>
+</html>

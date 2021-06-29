@@ -1,0 +1,201 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: SpreadsheetLayers 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-04-28 09:55+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.8.0\n"
+
+#: ../../README.rst:7
+msgid "QGIS-SpreadSheetLayers"
+msgstr ""
+
+#: ../../README.rst:9
+msgid ""
+"QGIS plugin to load layers from spreadsheet files (\\*.ods, \\*.xls, "
+"\\*.xlsx)"
+msgstr ""
+"Plugin QGIS pour charger des couches depuis des fichiers feuille de "
+"calcul (\\*.ods, \\*.xls, \\*.xlsx)"
+
+#: ../../README.rst:12
+msgid "Description"
+msgstr ""
+
+#: ../../README.rst:14
+msgid ""
+"This plugin adds a *Add spreadsheet layer* entry in *Layer* / *Add new "
+"Layer* menu and a corresponding button in *Layers* toolbar. These two "
+"links open the same dialog to load a layer from a spreadsheet file with "
+"some options:"
+msgstr ""
+"Ce plugin ajoute une nouvelle entrée *Ajouter une couche feuille de "
+"calcul* dans le menu *Couches* / *Ajouter une couche* et un bouton "
+"correspondant dans la barre d'outils *Couches*. Ces deux liens ouvrent un"
+" même boite de dialogue avec quelques options:"
+
+#: ../../README.rst:18
+msgid "select file"
+msgstr "sélectionner le fichier"
+
+#: ../../README.rst:19
+msgid "layer name"
+msgstr "nom de la couche"
+
+#: ../../README.rst:20
+msgid "sheet selection"
+msgstr "sélection de la feuille"
+
+#: ../../README.rst:21
+msgid "header at first line"
+msgstr "entête en début de fichier"
+
+#: ../../README.rst:22
+msgid "ignore some rows"
+msgstr "ignorer des lignes"
+
+#: ../../README.rst:23
+msgid "load geometry from x and y fields"
+msgstr "charger la géométrie depuis les champs x et y"
+
+#: ../../README.rst:25
+#, fuzzy
+msgid ""
+"When dialog is accepted, it creates a new GDAL VRT file in same folder as"
+" the source data file and layer name, expanded with a *.vrt* suffix, "
+"which is loaded into QGIS."
+msgstr ""
+"Lorsque la boite de dialogue est acceptée, un fichier GDAL VRT est créé "
+"dans le dossier du fichier source des données, étendu par un suffixe "
+"*.vrt*, qui est lui-même chargé dans QGIS."
+
+#: ../../README.rst:29
+msgid ""
+"When reusing the same file twice, the dialog loads its values from the "
+"existing *.vrt* file."
+msgstr ""
+"Lorque l'on utilise le même fichier une seconde fois, la boite de "
+"dialogue récupère les valeurs depuis le  fichier *.vrt* existant."
+
+#: ../../README.rst:33
+msgid "Limitations"
+msgstr ""
+
+#: ../../README.rst:35
+msgid "Due to a GDAL/OGR lacks of functionalities:"
+msgstr "A cause d'un manque de fonctionnalités dans GDAL/OGR:"
+
+#: ../../README.rst:37
+msgid "use of header line on a per file basis ;"
+msgstr "configuration de la ligne d'entête pour chaque fichier ;"
+
+#: ../../README.rst:38
+msgid "ignore lines at the beginning of file ;"
+msgstr "possibilité d'ignorer des lignes en début de fichier ;"
+
+#: ../../README.rst:39
+msgid "correct end of .xls files detection."
+msgstr "détection correcte de la fin des fichiers .xls."
+
+#: ../../README.rst:41
+msgid ""
+"The plugin use an SQLITE select statement with offset and limit "
+"parameters to extract corresponding data from the source file. When one "
+"of this functionalities is in use, this could have some side effects."
+msgstr ""
+"Le plugin utilise une requête de sélection SQLITE avec des paramètres "
+"décalage et limite pour extraire les données correspondantes. Lorsque "
+"l'une de ces fonctionnalités est utilisée, ceci peut avoir des effets de "
+"bord."
+
+#: ../../README.rst:45
+msgid ""
+"With GDAL <= 1.11.1, the plugin can't load geometry. With graceful "
+"degradation, geometry checkbox is then locked. To get the GDAL version in"
+" use, run this commands in QGIS python console:"
+msgstr ""
+"Avec GDAL <= 1.11.1, le plugin ne peut charger la géométrie. Dans ce mode"
+" dégradé, la case à cocher geometry est alors bloquée. Pour obtenir la "
+"version de GDAL en cours d'utilisation, lancez ces commandes dans la "
+"console python de QGIS:"
+
+#: ../../README.rst:54
+msgid ""
+"When opening a spreadsheet file, GDAL/OGR will try to detect the data "
+"type of columns (Date, Integer, Real, String, ...). This automatic "
+"detection occurs outside of plugin header and ignore lines "
+"functionalities, so when using this, GDAL/OGR should be unable to "
+"correctly detect data types."
+msgstr ""
+"Lors de l'ouverture de fichiers feuille de calcul, GDAL/OGR opère une "
+"détection automatique des types de données (Date, Entier, Réel, Chaine de"
+" caractères, ...). Cette détection automatique se produit en dehors des "
+"fonctionnalités d'entête et de lignes ignorées fournies par le plugin, "
+"lorsque vous les utilisez, GDAL/OGR ne pourra donc peut-être pas détecter"
+" correctement les types de données."
+
+#: ../../README.rst:60
+msgid "Configuration"
+msgstr "Configuration"
+
+#: ../../README.rst:62
+msgid ""
+"GDAL do not allow to define the presence of header line on a per layer "
+"basis, this choice is made through environment variables for each driver "
+"*OGR_ODS_HEADERS*, *OGR_XLS_HEADERS* and *OGR_XLSX_HEADERS*, with tree "
+"possible values *FORCE*, *DISABLE* and *AUTO*. For more details, consult "
+"the corresponding drivers documentation ie: "
+"http://www.gdal.org/drv_ods.html, http://www.gdal.org/drv_xls.html and "
+"http://www.gdal.org/drv_xlsx.html."
+msgstr ""
+"GDAL n'autorise pas la définition de la présence de la ligne d'entête "
+"pour chaque couche, ce choix est fait à travers des variables "
+"d'environnement pour chaque pilote *OGR_ODS_HEADERS*, *OGR_XLS_HEADERS* "
+"and *OGR_XLSX_HEADERS*, avec trois valeurs possibles *FORCE*, *DISABLE* "
+"and *AUTO*. Pour plus de détail, consultez la documentation des pilotes "
+"correspondants: http://www.gdal.org/drv_ods.html, "
+"http://www.gdal.org/drv_xls.html and http://www.gdal.org/drv_xlsx.html."
+
+#: ../../README.rst:70
+msgid "You can change this values in QGIS settings:"
+msgstr "Vous pouvez changer ces valeurs dans les options de QGIS:"
+
+#: ../../README.rst:72
+msgid "open *Settings* / *Options* dialog;"
+msgstr "ouvrez la boite de dialogue *Préférences* / *Options*;"
+
+#: ../../README.rst:73
+#, fuzzy
+msgid "select *System* tab, and go to *Environment* section;"
+msgstr "sélectionnez l'onglet *Système*, et allez dans la section *Environnement*;"
+
+#: ../../README.rst:74
+msgid "check *Use custom variables*."
+msgstr "Cochez la case *Utiliser des variables personnalisées*."
+
+#: ../../README.rst:75
+msgid "add a new line. Example:"
+msgstr "ajoutez une nouvelle ligne. Exemple:"
+
+#: ../../README.rst:77
+msgid "*Overwrite* | *OGR_ODS_HEADERS* | *FORCE*"
+msgstr "*Overwrite* | *OGR_ODS_HEADERS* | *FORCE*"
+
+#: ../../README.rst:79
+msgid "restart QGIS to take this into consideration."
+msgstr "redémarrer QGIS pour que la modification soit prise en compte."
+
+#: ../../README.rst:82
+msgid "Development install (linux)"
+msgstr "Installation pour le développement (linux)"
+
+#: ../../README.rst:91
+msgid "run QGIS and activate SpreadsheetLayers plugin."
+msgstr "lancez QGIS et activez le plugin SpreadsheetLayers"
+

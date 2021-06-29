@@ -1,0 +1,73 @@
+# This file contains metadata for your plugin. Beginning
+# with version 1.8 this is the preferred way to supply information about a
+# plugin. The current method of embedding metadata in __init__.py will
+# be supported until version 2.0
+
+# This file should be included when you package your plugin.
+
+# Mandatory items:
+
+
+[general]
+name=Layers menu from project
+qgisMinimumVersion=3.10
+qgisMaximumVersion=3.98
+description=Build layers shortcuts menus based on QGIS projects
+about=Allow easy opening of layers maintaining their style.
+
+version=2.0.0
+
+# end of mandatory metadata
+
+# Optional items:
+
+# Uncomment the following line and add your changelog entries:
+changelog=
+    2.0.0 : Allow pointing to http/https online qgs-qgz project file (#28)
+      thanks to Julien Moura (https://github.com/Guts)
+      Support of Joined layers
+    1.1.0 : It is now possible to merge two projects (#27).
+    1.0.6 : Build menus on initializationCompleted, otherwise tooltips are imperfect
+    1.0.5 : fix #25
+    1.0.4 : Add support for "trusted project" option, thanks to https://github.com/Djedouas
+    1.0.3 : fix #20 - Layer doesn't appear when sourced from "Integrate layers and group"
+    1.0.2 : Load all styles from DB if the plugin DB-Style-Manager is setup
+    1.0.1 : Bugfix #18. Relative paths mode
+    1.0.0 : Display geometry type icon, new location possible : "add layer" menu, code cleaning
+      thanks to Etienne Trimaille (https://github.com/Gustry)
+      Fix load-all failure
+    0.9.0 : Allow a project stored in database, thanks to Etienne Trimaille (https://github.com/Gustry)
+      allow qgz projects
+    0.8.3 : When create group option is checked, the original layer visibility is preserved.
+      thanks to Eric LAZZARETTI
+    0.8.2 : Code cleaning
+    0.8.1 : QGIS 2.99 compatible, Python 3, QT5
+    0.8.0 : Migration for QGIS3
+    0.7.6 : Better documentation
+    0.7.5 : Tooltip refinement
+    0.7.4 : Some python cleaning
+    0.7.3 : New layer id without special characters
+    0.7.2 : Some optimizations
+    0.7.1 : QGIS 2.4 compatible. Deprecated functions are deleted
+    0.7 : Works with "relative path" projects, and embedded layers
+    0.6 : QGIS 2.2 compatible
+    0.5 : QGIS 2.0 compatible
+    0.4.1 : Load all layers item, create group option (dev version 1.9)
+
+# tags are comma separated with spaces allowed
+tags=menu layer project
+
+homepage=https://github.com/xcaeag/MenuFromProject-Qgis-Plugin
+tracker=https://github.com/xcaeag/MenuFromProject-Qgis-Plugin/issues
+repository=https://github.com/xcaeag/MenuFromProject-Qgis-Plugin
+icon=resources/menu_from_project.png
+
+# experimental flag
+experimental=False
+
+# deprecated flag (applies to the whole plugin, not just a single version
+deprecated=False
+
+# Author contact information
+author=Xavier Culos (Agence de l'eau Adour Garonne), Etienne Trimaille, Julien M. (Oslandia)
+email=xavier.culos@eau-adour-garonne.fr

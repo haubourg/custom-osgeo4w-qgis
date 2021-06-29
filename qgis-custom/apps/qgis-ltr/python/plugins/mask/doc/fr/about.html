@@ -1,0 +1,24 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+<title>À propos</title>
+</head>
+<body>
+Cet outil a été développé pour aider les utilisateurs à générer rapidement des couches de masque pour mettre en évidence une zone d'intérêt.<br/><br/>
+  Les fonctionnalités actuelles sont :<ul>
+    <li>création et modificiation d'un masque à partir d'une sélection polygonale (sur la couche active)</li>
+    <li>création et modification d'un masque via un appel à la fonction do_mask, de sorte que la génération de masque peut être pilotée par d'autres plugins</li>
+    <li>ouverture d'une boîte de dialogue pour choisir les propriétés du masque :<ul>
+        <li>options de style (par défaut: polygone inversé avec bords flous)</li>
+        <li>tampon autour du masque</li>
+        <li>filtre des étiquettes pour les entités qui sont à l'intérieur de la zone d'intérêt (obtenu via la fonction filtre booléenne <b>in_mask(SRID)</b> sur les options de positionnement des étiquettes)</li>
+        <li>choix du format de la couche de masque (couche mémoire ou OGR)</li>
+    </ul></li>
+  </ul>
+
+  <p>Le plugin Mask a été développé par Xavier Culos (AEAG) avec des contributions de Hugo Mercier (Oslandia) sur financements de l'Agence de l'eau Adour Garonne.<br/>
+    Merci de notifier tout problème ou demande d'évolution <a href="https://github.com/aeag/mask_plugin/issues/">ici</a></p></translation>
+
+<p><a href="tips.html">Astuces</a></p>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>About</title>
+</head>
+<body>
+That tool is designed to help users to quickly generate cartographic masking layer to enlight an area of interest.<br/><br/>
+Current features are:<ul>
+  <li>creates or modifies a mask relying on current polygon selection (on active layer)</li>
+  <li>creates or modifies a mask via a call of do_mask function so that mask can be called programmatically from other plugins</li>
+  <li>opens a dialog to choose mask layer properties:<ul>
+      <li>style options (default is inverted polygon renderer + border shading)</li>
+      <li>buffer around mask</li>
+      <li>filter labels of features falling outside area of interest (achieved by a <b>in_mask(SRID)</b> function filter on labeling placement options)</li>
+      <li>choose mask layer format (Memory or any OGR datasource)</li>
+  </ul></li>
+</ul>
+
+<p>Mask plugin was developped by Xavier Culos (AEAG) and contributed by Hugo Mercier (Oslandia) on funding by Agence de l'eau Adour Garonne.<br/>
+  Please notify any issue or enhancement request <a href="https://github.com/aeag/mask_plugin/issues/">here</a></p>
+
+<p><a href="tips.html">Tips</a></p>
+</body>
+</html>

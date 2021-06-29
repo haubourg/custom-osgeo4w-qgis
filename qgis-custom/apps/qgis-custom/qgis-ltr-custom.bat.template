@@ -1,0 +1,34 @@
+@echo off
+call "%~dp0\o4w_env.bat"
+call qt5_env.bat
+call py3_env.bat
+@echo off
+path %OSGEO4W_ROOT%\apps\qgis-ltr\bin;%PATH%
+set QGIS_PREFIX_PATH=%OSGEO4W_ROOT:\=/%/apps/qgis-ltr
+set GDAL_FILENAME_IS_UTF8=YES
+rem Set VSI cache to be used as buffer, see #6448
+set VSI_CACHE=TRUE
+set VSI_CACHE_SIZE=1000000
+set QT_PLUGIN_PATH=%OSGEO4W_ROOT%\apps\qgis-ltr\qtplugins;%OSGEO4W_ROOT%\apps\qt5\plugins
+
+rem config custom
+
+REM  this "@@" pattern wil be replaced by make.sh with actual version 
+
+set QGIS-CUSTOM-VERSION=@@
+
+REM point a location for pg_service.conf 
+set PGSERVICEFILE=\\some-server\sit$\QGIS\custom\.pg_service.conf
+
+REM centralized plugins on a server if needed
+REM set QGIS_PLUGINPATH=\\some-server\sit$\QGIS\custom\python\plugins
+
+REM location for default settings (if provided by this package)
+set QGIS_GLOBAL_SETTINGS_FILE=%OSGEO4W_ROOT%\apps\qgis-custom\qgis_global_settings.ini
+
+REM location for default settings (if centralized on a network path)
+REM set QGIS_GLOBAL_SETTINGS_FILE=\\some-server\sit$\QGIS\custom\QGIS\qgis_global_settings.ini
+
+REM starts QGIS with various options (profile name, startup code )
+
+start "QGIS" /B "%OSGEO4W_ROOT%\bin\qgis-ltr-bin.exe" --profile custom --code  %OSGEO4W_ROOT%\apps\qgis-custom\qgis_constrained_settings.py %*

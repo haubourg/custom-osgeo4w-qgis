@@ -1,0 +1,39 @@
+# This file contains metadata for your plugin. Since 
+# version 2.0 of QGIS this is the proper way to supply 
+# information about a plugin. The old method of 
+# embedding metadata in __init__.py will 
+# is no longer supported since version 2.0.
+
+# This file should be included when you package your plugin.# Mandatory items:
+
+[general]
+name=Red Layer
+qgisMinimumVersion=2.99
+qgisMaximumVersion=3.99
+description=quick georeferenced sketches and annotations
+version=2.2
+author=Enrico Ferreguti
+email=enricofer@gmail.com
+about=A qgis plugin for sketching and drawing on map canvas. It is intended for quick annotations and field use. Sketches can be drawn in different colors and widths and can be converted in memory layer if needed. The sketches are stored in the project directory in a separate .sketch txt file that can be shared with other users. 
+
+# End of mandatory metadata
+
+# Recommended items:
+
+# Uncomment the following line and add your changelog:
+changelog=R2.2.0 Save issue fix and CRS Trasformation support
+
+# Tags are comma separated with spaces allowed
+tags=annotations, sketch, draw, pen, 
+
+homepage=http://geogear.wordpress.com
+tracker=https://github.com/enricofer/redLayer/issues
+repository=https://github.com/enricofer/redLayer
+category=Plugins
+icon=icons/sketch.svg
+# experimental flag
+experimental=False
+
+# deprecated flag (applies to the whole plugin, not just a single version)
+deprecated=False
+
