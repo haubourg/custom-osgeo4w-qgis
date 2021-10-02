@@ -13,13 +13,13 @@ VERSION=$(grep -i version setup.hint | awk '{printf $2}')
 sed -i "/install: x86_64/s/.*/install: x86_64\/release\/qgis\/qgis-custom\/qgis-custom-$VERSION.tar.bz2/" setup.hint
 
 # pushes version as a environment variable. Helps to diagnose which package version is installed quickly from QGIS settings
-sed -i "s/qgis-custom-VERSION=.*/qgis-custom-VERSION=$VERSION/" apps/qgis-custom/qgis-ltr-custom.bat.template
+sed -i "s/QGIS-CUSTOM-VERSION=.*/QGIS-CUSTOM-VERSION=$VERSION/" apps/qgis-custom/qgis-ltr-custom.bat.template
 
 # compression
 tar cvjSf ../qgis-custom-$VERSION.tar.bz2 .
 
 # restores @@ marker  
-sed -i "s/qgis-custom-VERSION=.*/qgis-custom-VERSION=@@/" apps/qgis-custom/qgis-ltr-custom.bat.template
+sed -i "s/QGIS-CUSTOM-VERSION=.*/QGIS-CUSTOM-VERSION=@@/" apps/qgis-custom/qgis-ltr-custom.bat.template
 
 
 
