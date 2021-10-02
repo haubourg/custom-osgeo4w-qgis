@@ -4,7 +4,7 @@ Name            : Mask plugin
 Description          : Help to create mask
 Date                 : 08/Feb/12
 copyright            : (C) 2011 by AEAG
-email                : xavier.culos@eau-adour-garonne.fr 
+email                : xavier.culos@eau-adour-garonne.fr
  ***************************************************************************/
 
 /***************************************************************************
@@ -17,7 +17,10 @@ email                : xavier.culos@eau-adour-garonne.fr
  ***************************************************************************/
  This script initializes the plugin, making it known to QGIS.
 """
-def classFactory(iface): 
-  # load aeag_mask class from file aeag_mask
-  from .aeag_mask import aeag_mask 
-  return aeag_mask(iface)
+
+
+def classFactory(iface):
+    # load aeag_mask class from file aeag_mask
+    from .aeag_mask import aeag_mask
+
+    return aeag_mask(iface)

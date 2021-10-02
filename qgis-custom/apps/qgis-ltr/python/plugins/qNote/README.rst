@@ -14,6 +14,7 @@ Quick instruction
 
 Just write some information in text field and save project. 
 When you reopen it informations automaticly loads to text field.
+Hyperlinks to URLs or paths on the local file system can be added via right click or the link-button.
 
 Installation
 ++++++++++++
