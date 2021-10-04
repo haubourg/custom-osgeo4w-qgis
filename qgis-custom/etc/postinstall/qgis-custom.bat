@@ -7,6 +7,11 @@ set OSGEO4W_ROOT=%OSGEO4W_ROOT:\=\\%
 
 set APPNAME=QGIS CUSTOM (LTR)
 
+@REM Modify QGIS_WIN_APP_NAME and re-do --postinstall.
+@REM Avoid the creation of default QGIS Desktop shortcut (https://trac.osgeo.org/osgeo4w/ticket/694)
+for %%i in ("%OSGEO4W_STARTMENU%") do set QGIS_WIN_APP_NAME=%%~ni\%APPNAME%
+call "%OSGEO4W_ROOT%\bin\qgis-ltr.bat" --postinstall
+
 @REM  backup native QGIS bat files and shortcuts
 
 move /Y "%OSGEO4W_ROOT%\bin\qgis-ltr.bat" "%OSGEO4W_ROOT%\bin\qgis-ltr-natif.bat"
