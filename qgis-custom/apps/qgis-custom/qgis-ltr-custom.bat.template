@@ -34,4 +34,4 @@ REM set QGIS_GLOBAL_SETTINGS_FILE=\\some-server\sit$\QGIS\custom\QGIS\qgis_globa
 
 REM starts QGIS with various options (profile name, startup code )
 
-start "QGIS" /B "%OSGEO4W_ROOT%\bin\qgis-ltr-bin.exe" --profile custom --code  %OSGEO4W_ROOT%\apps\qgis-custom\qgis_constrained_settings.py %*
+start "QGIS" /B "%OSGEO4W_ROOT%\bin\qgis-ltr-bin.exe" --profile custom %*
