@@ -2,25 +2,21 @@
 # config file :   qgis_constrained_settings.yml
 # cf  https://gitlab.com/Oslandia/qgis/qgis-constrained-settings
 
-import yaml
 import codecs
-import pathlib
 import collections
-import configparser
-import PyQt5.QtCore
-import qgis.core
+from configparser import ConfigParser
+from pathlib import Path
+
+import yaml
+from PyQt5.QtCore import QSettings
+from qgis.core import QgsApplication, QgsSettings
 
 
 def main():
-    application = qgis.core.QgsApplication.instance()
-    applicationSettings = qgis.core.QgsSettings(
-        application.organizationName(), application.applicationName()
-    )
-    globalSettingsPath = pathlib.Path(applicationSettings.globalSettingsPath())
-    globalSettingsDirPath = globalSettingsPath.parent
-    qgisConstrainedSettingsPath = (
-        globalSettingsDirPath / "qgis_constrained_settings.yml"
-    )
+    application = QgsApplication.instance()
+    applicationSettings = QgsSettings(application.organizationName(), application.applicationName())
+    globalSettingsPath = Path(applicationSettings.globalSettingsPath())
+    qgisConstrainedSettingsPath = Path(__file__).parent / "qgis_constrained_settings.yml"
 
     if not qgisConstrainedSettingsPath.is_file():
         print("No file named {}".format(qgisConstrainedSettingsPath))
@@ -30,7 +26,7 @@ def main():
     with open(str(qgisConstrainedSettingsPath)) as f:
         constrainedSettings = yaml.safe_load(f)
 
-    userSettings = PyQt5.QtCore.QSettings()
+    userSettings = QSettings()
     print("Process {}".format(userSettings.fileName()))
 
     propertiesToRemove = constrainedSettings.get("propertiesToRemove", {})
@@ -44,7 +40,7 @@ def main():
                 userSettings.remove(prop)
         userSettings.endGroup()
 
-    globalSettings = configparser.ConfigParser()
+    globalSettings = ConfigParser()
     with open(str(globalSettingsPath)) as f:
         globalSettings.read_file(f)
 
@@ -73,9 +69,7 @@ def main():
             )
             userPropertyValues = globalPropertyValues + userPropertyValues
             # remove duplicates
-            userPropertyValues = list(
-                collections.OrderedDict.fromkeys(userPropertyValues)
-            )
+            userPropertyValues = list(collections.OrderedDict.fromkeys(userPropertyValues))
             userSettings.setValue(prop, userPropertyValues)
         userSettings.endGroup()
 
@@ -87,12 +81,10 @@ def main():
             if not userPropertyValues:
                 continue
             valuesToRemove = list(map(lambda v: v.rstrip("/\\ "), properties[prop]))
-            userPropertyValues = [
-                v for v in userPropertyValues if v.rstrip("/\\ ") not in valuesToRemove
-            ]
+            userPropertyValues = [v for v in userPropertyValues if v.rstrip("/\\ ") not in valuesToRemove]
             userSettings.setValue(prop, userPropertyValues)
         userSettings.endGroup()
 
 
-if __name__ == "__main__":
+if __name__ == "startup":
     main()

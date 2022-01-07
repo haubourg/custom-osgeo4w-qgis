@@ -14,13 +14,13 @@ cd qgis-custom
 
 SETUP_TEXT=$(cat setup.hint)
 
-PACKAGE_DIR="/x/OSGEO4W_DEPLOY_TEST/PAQUETS/http%3a%2f%2fwww.norbit.de%2fosgeo4w%2f"
+PACKAGE_DIR=$1
 
-echo "-Target package directory : 
+echo "- Target package directory : 
 $PACKAGE_DIR
 "
 
-echo "-PAckage metadata : 
+echo "- Package metadata : 
 ------------
 $SETUP_TEXT
 ------------"
@@ -28,20 +28,20 @@ $SETUP_TEXT
 
 if [ ! -d "$PACKAGE_DIR" ] 
 then
-   echo "Target directory doesn't exists"
-#    e  xit 2 
+   echo "Target directory doesn't exists!"
+   exit 1
 fi
 
 
 VERSION=$(grep -i version setup.hint | awk '{printf $2}') 
 
-echo "package version found:  $VERSION"
+echo "Package version found: $VERSION"
 
 mkdir -p "$PACKAGE_DIR/x86_64/release/qgis/qgis-custom/"
 
 cd - 
 
-cp -p qgis-custom-$VERSION.tar.bz2 $PACKAGE_DIR/x86_64/release/qgis/qgis-custom/
+sudo cp -p qgis-custom-$VERSION.tar.bz2 $PACKAGE_DIR/x86_64/release/qgis/qgis-custom/
 
 # md5 and size  
 MD5=$(md5sum qgis-custom-$VERSION.tar.bz2 | awk -F'[ ]'  '{print $1}')
@@ -49,20 +49,30 @@ size=$(stat -c "%s" qgis-custom-$VERSION.tar.bz2)
 
 # adds metadata into setup.ini, from setup.hint template
 
-echo -e "
-- Modification du setup.ini cible" 
+echo -e "- Modification of setup.ini"
+
+cp -p $PACKAGE_DIR/x86_64/setup.ini setup.ini
+chmod +w setup.ini
 
 # deletes previous entry
-sed -i  '/@ qgis-custom/,+8d;' $PACKAGE_DIR/x86_64/setup.ini
+sed -i '/@ qgis-custom/,+8d;' setup.ini
 
 # append to the end of the file
-
 echo "@ qgis-custom
 $SETUP_TEXT $size $MD5 
-" >>  $PACKAGE_DIR/x86_64/setup.ini 
+" >>  setup.ini 
+
+sudo cp -fp setup.ini $PACKAGE_DIR/x86_64/setup.ini
+rm -f setup.ini
 
 echo -e "--------"
 
 echo -e "** Package deployed **"
 
-echo -e "--------"
+echo -e "--------\n"
+
+echo -e "- Copy osgeo4w-setup.exe and .bat install"
+sudo cp -p install/install_QGIS.bat $PACKAGE_DIR/../
+sudo cp -p install/osgeo4w-setup.exe $PACKAGE_DIR/../
+echo -e "Done"
+

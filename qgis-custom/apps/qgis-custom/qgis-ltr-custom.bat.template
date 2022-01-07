@@ -1,7 +1,10 @@
 @echo off
 call "%~dp0\o4w_env.bat"
-call qt5_env.bat
-call py3_env.bat
+if not exist "%OSGEO4W_ROOT%\apps\qgis-ltr\bin\qgisgrass7.dll" goto nograss
+set savedpath=%PATH%
+call "%OSGEO4W_ROOT%\apps\grass\grass78\etc\env.bat"
+path %OSGEO4W_ROOT%\apps\grass\grass78\lib;%OSGEO4W_ROOT%\apps\grass\grass78\bin;%savedpath%
+:nograss
 @echo off
 path %OSGEO4W_ROOT%\apps\qgis-ltr\bin;%PATH%
 set QGIS_PREFIX_PATH=%OSGEO4W_ROOT:\=/%/apps/qgis-ltr
@@ -31,4 +34,4 @@ REM set QGIS_GLOBAL_SETTINGS_FILE=\\some-server\sit$\QGIS\custom\QGIS\qgis_globa
 
 REM starts QGIS with various options (profile name, startup code )
 
-start "QGIS" /B "%OSGEO4W_ROOT%\bin\qgis-ltr-bin.exe" --profile custom --code  %OSGEO4W_ROOT%\apps\qgis-custom\qgis_constrained_settings.py %*
+start "QGIS" /B "%OSGEO4W_ROOT%\bin\qgis-ltr-bin.exe" --profile custom %*
